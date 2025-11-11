@@ -1,15 +1,27 @@
 {
     "admin": [
         {
+            "id": "1",
             "username": "1",
-            "password": "1"
+            "password": "01"
+        },
+        {
+            "id": "2",
+            "username": "mutia",
+            "password": "02"
+        },
+        {
+            "id": "3",
+            "username": "riyadh",
+            "password": "03"
         }
     ],
     "member": [
         {
-            "id": "",
-            "username": "",
-            "password": ""
+            "id": "1",
+            "username": "test",
+            "password": "1",
+            "status": "BANNED"
         }
     ]
 }
