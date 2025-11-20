@@ -12,3 +12,5 @@ class Route:
     def remove_issue(self, index):
         if 0 <= index < len(self.issues):
             del self.issues[index]
+
+    
