@@ -1,6 +1,8 @@
 import inquirer
 import os
 
+from file_data.datajson import *
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -207,6 +209,8 @@ def daftar() -> None:
         review()
 
 def catat() -> None:
+    data = baca_data_laporan
+    tulis_review = data["review_rute"]
     while True:
         clear_screen()
         print("=" * 60)
@@ -233,7 +237,9 @@ def catat() -> None:
             star = input("Rating (1-5) : ").strip()
             if star not in ['1', '2', '3', '4', '5']:
                 raise ValueError("\nRating harus antara 1 sampai 5 dan tidak boleh kosong!")
-
+            data_review ={
+                
+            }
             daftar_perjalanan["Nama"].append(user_login)
             daftar_perjalanan["Nama Perjalanan"].append(nama_perjalanan)
             daftar_perjalanan["Destinasi"].append(destinasi)

@@ -10,10 +10,11 @@ def registrasi():
     while True:
         data = baca_data_akun()
         member_akun = data["member"]
+        admin_akun = data["admin"]
         try:
             regis_username = input("Masukkan username: ")
             regis_password = input("Masukkan password: ")
-            if regis_username in [akun["username"] for akun in member_akun]:
+            if regis_username in [akun["username"] for akun in member_akun] or regis_username in [a["username"] for a in admin_akun]:
                 raise ValueError("Username sudah terdaftar. Silakan coba username lain.")
             elif regis_password.strip() == "":
                 raise ValueError("Password tidak boleh kosong.")
@@ -152,6 +153,7 @@ def login_akun():
                   
         except ValueError as e:
             print(e)
+            detik3_coba_lagi()
             return None, None
             
     print("Kesempatan login habis. Silakan coba lagi nanti.")
