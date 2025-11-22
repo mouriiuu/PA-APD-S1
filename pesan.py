@@ -79,7 +79,7 @@ def loading():
 def loading_waktu(waktu_menit):
     for sisa in range(waktu_menit, -1, -5):
         bar = "█" * (waktu_menit - sisa)
-        bar += "░" * sisa
+        bar += "_" * sisa
 
         print(f"\rWaktu Tersisa: {sisa} Menit |{bar}|", end = "\r")
         sys.stdout.flush()

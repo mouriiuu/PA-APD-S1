@@ -11,7 +11,7 @@ kecepatan_kendaraan = {
 }
 
 def pilih_kota_tujuan(kota_1, data_rute):
-    daftar_rute = [rute["rute"] for rute in data_rute[kota_1]]
+    daftar_rute = [rute["rute"] for rute in data_rute[kota_1]] #kota_1 = Balikpapan #data_rute = myimpan history perjalanan yang sudah di lakukan
 
     if not daftar_rute:
         print("\nTidak ada rute lanjutan dari kota ini.")

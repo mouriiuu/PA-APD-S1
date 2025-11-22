@@ -74,6 +74,7 @@ def jalan_jalan(username):
 
     if jarak is None:
         print("Jarak tidak ditemukan!")
+        input("Tekan Enter Untuk Kembali...")
         return
 
     clear()

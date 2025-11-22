@@ -12,8 +12,8 @@ def registrasi():
         member_akun = data["member"]
         admin_akun = data["admin"]
         try:
-            regis_username = input("Masukkan username: ")
-            regis_password = input("Masukkan password: ")
+            regis_username = input("Masukkan username: ").strip()
+            regis_password = input("Masukkan password: ").strip()
             if regis_username in [akun["username"] for akun in member_akun] or regis_username in [a["username"] for a in admin_akun]:
                 raise ValueError("Username sudah terdaftar. Silakan coba username lain.")
             elif regis_password.strip() == "":
@@ -131,6 +131,7 @@ def login_akun():
                         kesempatan -= 1
                         input("Password salah. Silakan tekan enter untuk coba lagi.")
                         detik3_coba_lagi()
+                        clear()
                         break
                          
         # Login akun admin
