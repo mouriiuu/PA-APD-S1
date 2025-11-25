@@ -43,6 +43,7 @@ def membuat_rute_perjalanan():
                     "jarak_tempuh": jarak_tempuh,
                     "status" : "aman"
                     }
+            
             tambah_rute.append(rute_baru)
             with open("file_data/data_perjalanan.json", "w") as file:
                 json.dump(data, file, indent = 4)

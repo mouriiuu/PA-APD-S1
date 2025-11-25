@@ -11,7 +11,7 @@
             "status": "aman"
         },
         {
-            "rute": "Balikpapan-Banjarbaru",
+            "rute": "Balikpapan-Banjarbaru", 
             "jarak_tempuh": 120.0,
             "status": "aman"
         },
@@ -23,7 +23,7 @@
         {
             "rute": "Balikpapan-Pontianak",
             "jarak_tempuh": 140.0,
-            "status": "aman"
+            "status": "aman"    
         },
         {
             "rute": "Balikpapan-Singkawang",
