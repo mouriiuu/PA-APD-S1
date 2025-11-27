@@ -74,7 +74,7 @@ def update(username):
             if destinasi_baru:
                 r["Destinasi"] = destinasi_baru
 
-            tanggal_baru = input(f"Tanggal Pergi [{r['Tanggal']}] (DD/MM/YYYY): ").strip()
+            tanggal_baru = input(f"Tanggal Pergi [{tanggal_sekarang}] (DD/MM/YYYY): ").strip()
             if tanggal_baru:
                 try:
                     datetime.strptime(tanggal_baru, "%d/%m/%Y")
