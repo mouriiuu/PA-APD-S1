@@ -87,10 +87,12 @@ def jalan_jalan(username):
 
     print(f"Waktu tempuh: {waktu_menit} Menit")
     print("Perjalanan sedang berlangsung...\n")
+    simpan_kota_terakhir(username, kota_tujuan)
     loading_waktu(waktu_menit)
 
     clear()
     while True:
+        print(f"Kota terakhir kamu sekarang: {kota_tujuan}")
         pertanyaan = [
                 inquirer.List('menu',
                             message = "Apakah anda ingin memberikan review/laporan untuk kota ini?",
@@ -124,13 +126,8 @@ def jalan_jalan(username):
                     break
         else:
             break              
-        
-        
-
     clear()
     
-    simpan_kota_terakhir(username, kota_tujuan)
-    print(f"Kota terakhir kamu sekarang: {kota_tujuan}")
     
     
     

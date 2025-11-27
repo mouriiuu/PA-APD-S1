@@ -14,7 +14,7 @@ def pilih_kota_tujuan(kota_1, data_rute):
     daftar_rute = [rute["rute"] for rute in data_rute[kota_1]] #kota_1 = Balikpapan #data_rute = myimpan history perjalanan yang sudah di lakukan
 
     if not daftar_rute:
-        print("\nTidak ada rute lanjutan dari kota ini.")
+        print("\n===Tidak ada rute lanjutan dari kota ini===")
         input("Tekan Enter Untuk Kembali Ke Menu Awal...")
         os.system("cls" if os.name == "nt" else "clear")
         return None
