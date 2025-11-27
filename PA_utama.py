@@ -54,7 +54,17 @@ while True:
                     bersih()
                     while True:
                         header_menu_admin()
-                        break
+                        jawab_pil2 = mengelola_laporan_review()
+                        if jawab_pil2["menu_pil2"][0] == "1":
+                            bersih()
+                            pass
+                            # menangani_laporan_perjalanan()
+                        elif jawab_pil2["menu_pil2"][0] == "2":
+                            bersih()
+                            melihat_dan_menghapus_review_pengguna()
+                        elif jawab_pil2["menu_pil2"][0] == "3":
+                            bersih()
+                            break
                  
                 elif jawab["admin_menu"][0] == "3":
                     detik3()

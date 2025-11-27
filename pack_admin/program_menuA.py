@@ -187,6 +187,126 @@ def menghapus_rute_perjalanan():
             clear()
             continue    
    
+def melihat_dan_menghapus_review_pengguna(konfirmasi_awal=False):
+    data = baca_data_laporan()
+    review = data["review_rute"]
+
+    clear()
+    print("=" * 60)
+    print("\t\tMELIHAT REVIEW PENGGUNA")
+    print("=" * 60)
+
+    if len(review) < 1:
+        print("Tidak Ada Review Pengguna Yang Terdeteksi!!")
+        input("\nTekan Enter Untuk Kembali Ke Menu Mengelola Review Pengguna...")
+        detik3()
+        clear()
+        return
+
+    for idx, r in enumerate(review):
+        print(f"ID Review           : {idx+1}")
+        print(f"Nama                : {r['Nama']}")
+        print(f"Nama Perjalanan     : {r['Nama Perjalanan']}")
+        print(f"Destinasi           : {r['Destinasi']}")
+        print(f"Tanggal             : {r['Tanggal']}")
+        print(f"Durasi              : {r['Durasi']}")
+        print(f"Budget              : {r['Budget']}")
+        print(f"Cerita              : {r['Cerita']}")
+        print(f"Rating              : {r['Rating']}")
+        print("-" * 60)
+
+    if not konfirmasi_awal:
+        pilihan = input("Apakah Anda Ingin Menghapus Review Dari Daftar Ini? (Y/N): ").strip().lower()
+        if pilihan == "n":
+            print("\nKembali Ke Menu Mengelola Review Pengguna...")
+            detik3()
+            clear()
+            return
+
+        elif pilihan == "y":
+            if len(review) < 1:
+                print("Semua Review Sudah Dihapus!!")
+                input("\nTekan Enter Untuk Kembali...")
+                detik3()
+                clear()
+                return
+        else:
+            print("\nInput Tidak Valid! Masukkan Y atau N.")
+            input("Tekan Enter Untuk Menginput Ulang...")
+            clear()
+            return melihat_dan_menghapus_review_pengguna(konfirmasi_awal=False)
+
+    while True:
+        clear()
+        print("=" * 60)
+        print("\t\tMENGHAPUS REVIEW PENGGUNA")
+        print("=" * 60)
+
+        for idx, r in enumerate(review):
+            print(f"{idx+1}. Nama: {r['Nama']} | Perjalanan: {r['Nama Perjalanan']} | Rating: {r['Rating']}")
+
+        hapus_id = input("\nMasukkan ID Review Yang Ingin Anda Hapus: ").strip()
+
+        try:
+            hapus_id = int(hapus_id)
+            index = hapus_id - 1
+
+            if index < 0 or index >= len(review):
+                print("\nID tidak ditemukan!")
+                input("Tekan Enter untuk ulangi...")
+                clear()
+                continue
+
+            review_dihapus = review[index]
+
+            while True:
+                konfirmasi = input(
+                    f"Apakah Anda Yakin Ingin Menghapus Review Dari Pengguna {review_dihapus['Nama']}? (Y/N): "
+                ).strip().lower()
+
+                if konfirmasi == "y":
+                    review.pop(index)
+
+                    with open("file_data/data_laporan.json", "w") as file:
+                        json.dump(data, file, indent=4)
+
+                    print(f"\nReview Dari Pengguna {review_dihapus['Nama']} Berhasil Dihapus!!")
+
+                    while True:
+                        ulang = input("Apakah Anda Ingin Menghapus Review Lagi? (Y/N): ").strip().lower()
+                        if ulang == "y":
+                            return melihat_dan_menghapus_review_pengguna(konfirmasi_awal=True)
+
+                        elif ulang == "n":
+                            print("Kembali Ke Menu Mengelola Review Pengguna...")
+                            detik3()
+                            clear()
+                            return
+
+                        else:
+                            print("Masukkan pilihan Y atau N!")
+                            input("Tekan Enter Untuk Menginput Ulang...")
+                            clear()
+
+                elif konfirmasi == "n":
+                    print("\nPenghapusan Dibatalkan.")
+                    input("Tekan Enter Untuk Kembali...")
+                    clear()
+                    return
+
+                else:
+                    print("Masukkan pilihan Y atau N!")
+                    input("Tekan Enter Untuk Menginput Ulang...")
+                    clear()
+                    continue
+
+        except ValueError:
+            print("\nInput Tidak Valid!! ID Harus Berupa Angka!!")
+            input("Tekan Enter Untuk Menginput Ulang...")
+            detik3()
+            clear()
+            continue
+   
     
 def melihat_akun_pengguna(konfirmasi_awal = False):
     data = baca_data_akun()
