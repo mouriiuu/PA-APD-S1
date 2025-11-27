@@ -2,5 +2,16 @@
     "pesan_admin": [],
     "laporan_akun": [],
     "laporan_rute": [],
-    "review_rute": []
+    "review_rute": [
+        {
+            "Nama": "mouriiu",
+            "Nama Perjalanan": "Bontang-Balikpapan",
+            "Destinasi": "Lapangan Merdeka",
+            "Tanggal": "20/12/2027",
+            "Durasi": "1 Minggu",
+            "Budget": "4000000",
+            "Cerita": "Seru",
+            "Rating": "5"
+        }
+    ]
 }

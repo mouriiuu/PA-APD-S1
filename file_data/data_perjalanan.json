@@ -46,9 +46,20 @@
             "rute": "Samarinda-Balikpapan",
             "jarak_tempuh": 100.0,
             "status": "aman"
+        },
+        {
+            "rute": "Samarinda-Bontang",
+            "jarak_tempuh": 110.0,
+            "status": "aman"
         }
     ],
-    "Bontang": [],
+    "Bontang": [
+        {
+            "rute": "Bontang-Balikpapan",
+            "jarak_tempuh": 110.0,
+            "status": "aman"
+        }
+    ],
     "Banjarbaru": [],
     "Banjarmasin": [],
     "Pontianak": [],
